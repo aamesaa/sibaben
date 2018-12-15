@@ -8,10 +8,10 @@ include'config.php';
 include'includes/ez_sql_core.php';
 include'includes/ez_sql_mysqli.php';
 include'includes/SimpleImage.php';
-$db = new ezSQL_mysqli($config[username], $config[password], $config[database_name], $config[server]);
+$db = new ezSQL_mysqli($config["username"], $config["password"], $config["database_name"], $config["server"]);
     
-$mod = $_GET[m];
-$act = $_GET[act];  
+$mod = $_GET["m"];
+$act = $_GET["act"];
 
 /** ============ GENERAL =========== */
 function esc_field($str){
