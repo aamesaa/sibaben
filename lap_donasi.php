@@ -9,7 +9,7 @@
                 <input class="form-control" type="text" placeholder="Pencarian. . ." name="q" value="<?=$_GET['q']?>" />
             </div>
             <div class="form-group">
-                <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</a>
+                <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
             </div>
         </form>
     </div>
