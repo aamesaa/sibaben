@@ -51,7 +51,7 @@
             <a class="btn btn-xs btn-danger" href="aksi.php?act=berita_hapus&ID=<?=$row->id_berita?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a>
         </td>
         <td class=" <?=($_SESSION['akses']=='donatur') ? '' : 'hidden'?>">
-            <a class="btn btn-xs btn-warning" href="aksi.php?act=donasi_tambah&ID=<?=$row->id_berita?>"><span class="glyphicon glyphicon-plus"></span> Donasi</a>
+            <a class="btn btn-xs btn-warning" href="?m=donasi_tambah&ID=<?=$row->id_berita?>"><span class="glyphicon glyphicon-plus"></span> Donasi</a>
         </td>
     </tr>
     <?php endforeach;
