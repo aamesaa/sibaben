@@ -1,17 +1,19 @@
 <?php
-    $row = $db->get_row("SELECT id_berita, nama_lengkap, total, email, no_hp, metode_pembayaran, jml_donasi FROM donatur WHERE id_berita='$_GET[ID]'"); 
+    $row = $db->get_row("SELECT id_berita, nama_lengkap, total, email, no_hp, metode_pembayaran, jml_donasi FROM donatur WHERE id_berita='$_GET[ID]'");
+    $berita = $db->get_row("SELECT judul FROM berita WHERE id_berita='$_GET[ID]'");
+
 ?>
 
 <div class="page-header">
     <h1>Donasi</h1>
 </div>
-<p>Anda akan berdonasi untuk bencana <!--judul berita yang dapet dari get[ID] -->
+<p>Anda akan berdonasi untuk bencana <strong><?php echo $berita->judul?></strong><!--judul berita yang dapet dari get[ID] -->
 <div class="row">
 <div class="col-sm-6">
         <form method="post" action="?m=donasi_tambah&ID=<?=$row->id_berita?>">
             <div class="form-group">
                 <label>Judul Berita <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="judul" readonly value="<?=$_GET[judul]?>"/>
+                <input class="form-control" type="text" name="judul" readonly value="<?=$berita->judul?>"/>
             </div>
         </form>
         </div>
@@ -23,19 +25,19 @@
             <h2> Identitas </h2>
             <div class="form-group">
                 <label>Nama Lengkap <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="nama_lengkap" value="<?=$_POST[nama_lengkap]?>"/>
+                <input class="form-control" type="text" name="nama_lengkap" value="<?=$_POST['nama_lengkap']?>"/>
             </div>
             <div class="form-group">
                 <label>Email <span class="text-danger">*</span></label>
-                <input class="form-control" type="email" name="email" value="<?=$_POST[email]?>"/>
+                <input class="form-control" type="email" name="email" value="<?=$_POST['email']?>"/>
             </div>
             <div class="form-group">
                 <label>No Hp/Tlp <span class="text-danger">*</span></label>
-                <input class="form-control" type="text" name="no_hp" value="<?=$_POST[no_hp]?>"/>
+                <input class="form-control" type="text" name="no_hp" value="<?=$_POST['no_hp']?>"/>
             </div>
             <div class="form-group">
                 <label>Jumlah donasi (min Rp 50.000) <span class="text-danger">*</span></label>
-                <input class="form-control" type="number" name="total" value="<?=$_POST[total]?>"/>
+                <input class="form-control" type="number" name="total" value="<?=$_POST['total']?>"/>
             </div>
             <div class="form-group">
                 <label>Metode Pembayaran <span class="text-danger">*</span></label>
