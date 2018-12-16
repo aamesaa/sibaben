@@ -50,10 +50,17 @@
               </ul>          
               <ul class="nav navbar-nav navbar-right">
               <?php if($_SESSION['login']):?>
+               <li class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <?php echo  'Hai, '.$_SESSION['login'].'' ?>
+                 <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                 <li><a href="aksi.php?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+               </li>
                 <!-- <li><a href="?m=password"><span class="glyphicon glyphicon-lock"></span> Password</a></li> -->
-                <li><a href="aksi.php?act=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
-              <?php endif ?> 
               </ul>
+
+                <?php endif ?>
             </div><!--/.nav-collapse -->
         </div>
         </nav>          

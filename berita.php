@@ -10,7 +10,7 @@
                 <input class="form-control" type="text" placeholder="Pencarian. . ." name="q" value="<?=$_GET['q']?>" />
             </div>
             <div class="form-group">
-                <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</a>
+                <button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Refresh</button>
             </div>
             <div class="form-group  <?=($_SESSION['akses']=='pengawas') ? '' : 'hidden'?>">
                 <a class="btn btn-primary" href="?m=berita_tambah"><span class="glyphicon glyphicon-plus"></span> Tambah</a>
@@ -51,7 +51,7 @@
             <a class="btn btn-xs btn-danger" href="aksi.php?act=berita_hapus&ID=<?=$row->id_berita?>" onclick="return confirm('Hapus data?')"><span class="glyphicon glyphicon-trash"></span></a>
         </td>
         <td class=" <?=($_SESSION['akses']=='donatur') ? '' : 'hidden'?>">
-            <a class="btn btn-xs btn-warning" href="aksi.php?act=donasi_tambah&ID=<?=$row->id_berita?>"><span class="glyphicon glyphicon-plus"></span> Donasi</a>
+            <a class="btn btn-xs btn-warning" href="?m=donasi_tambah&ID=<?=$row->id_berita?>"><span class="glyphicon glyphicon-plus"></span> Donasi</a>
         </td>
     </tr>
     <?php endforeach;
